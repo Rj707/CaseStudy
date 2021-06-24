@@ -24,10 +24,5 @@ $ cd BykeaCaseStudy
 $ open BykeaCaseStudy.xcworkspace
 ```
 
-## NOTE
-
-Add your api key(**cloudinaryAPIKey** in Constants file) after registering your account at [cloudinary](https://cloudinary.com/)
-
-
 ## Author
 Raja Saad, https://www.linkedin.com/in/hafiz-saad-%EF%A3%BF-48a952b4/
