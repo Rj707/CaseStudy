@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="EmptyTableViewBackgroundView" customModule="BykeaCaseStudy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search_icon" translatesAutoresizingMaskIntoConstraints="NO" id="qpw-5j-EEc">
+                    <rect key="frame" x="145" y="222.5" width="85" height="85"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="85" id="Acy-Dz-9rK"/>
+                        <constraint firstAttribute="height" constant="85" id="R6Y-Lj-Rk9" customClass="NSLayoutHelper" customModule="BykeaCaseStudy" customModuleProvider="target">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone4s">
+                                    <real key="value" value="80"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                                    <real key="value" value="80"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone8">
+                                    <real key="value" value="100"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone8Plus">
+                                    <real key="value" value="100"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </constraint>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No results found for" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOR-IL-26i">
+                    <rect key="frame" x="50" y="323.5" width="275" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wH0-fN-gvm">
+                    <rect key="frame" x="127.5" y="356" width="120" height="44"/>
+                    <color key="backgroundColor" red="0.17254901960784313" green="0.76862745098039209" blue="0.52549019607843139" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="02S-sJ-cBa"/>
+                        <constraint firstAttribute="width" constant="120" id="7j6-CT-gUc"/>
+                    </constraints>
+                    <state key="normal" title="Search Artist">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="noResultButtonTouched:" destination="iN0-l3-epB" eventType="touchUpInside" id="Os7-Kp-p7I"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="HOR-IL-26i" secondAttribute="trailing" constant="50" id="D4w-u7-wSH"/>
+                <constraint firstItem="HOR-IL-26i" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="HHc-s9-ty7"/>
+                <constraint firstItem="wH0-fN-gvm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="IBX-j3-vdH"/>
+                <constraint firstItem="HOR-IL-26i" firstAttribute="top" secondItem="qpw-5j-EEc" secondAttribute="bottom" constant="16" id="LsK-4C-7Zq"/>
+                <constraint firstItem="HOR-IL-26i" firstAttribute="centerX" secondItem="qpw-5j-EEc" secondAttribute="centerX" id="WRj-Vh-CUO"/>
+                <constraint firstItem="qpw-5j-EEc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="hQV-F0-MMd"/>
+                <constraint firstItem="HOR-IL-26i" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="jsC-m7-FAe"/>
+                <constraint firstItem="wH0-fN-gvm" firstAttribute="top" secondItem="HOR-IL-26i" secondAttribute="bottom" constant="12" id="vN2-7P-rR2"/>
+            </constraints>
+            <connections>
+                <outlet property="imageView" destination="qpw-5j-EEc" id="44w-hi-GBT"/>
+                <outlet property="noResultButton" destination="wH0-fN-gvm" id="Pxd-0q-Wyg"/>
+                <outlet property="titleLabel" destination="HOR-IL-26i" id="8Qu-tP-roY"/>
+            </connections>
+            <point key="canvasLocation" x="-61.600000000000001" y="-67.016491754122939"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="search_icon" width="116" height="121"/>
+    </resources>
+</document>
