@@ -151,7 +151,10 @@ extension SearchArtistViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
+        handleSearchBarCancelButton(shouldHide: false)
+
         artistSearchBar.resignFirstResponder()
+        
         var arrayOfIndexPaths = [indexPath]
         if playingSongIndex.row != -1
         {
@@ -191,15 +194,32 @@ extension SearchArtistViewController: UISearchBarDelegate
         timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(performSearchWithDelay), userInfo: nil, repeats: false)
     }
     
-    func searchBarDidBeginEditing(_ searchBar: UISearchBar) -> Bool
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool
     {
         self.hideEmptyTableViewMessage(tableView: tableView)
         return true
     }
     
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar)
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar)
     {
+        handleSearchBarCancelButton(shouldHide: true)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar)
+    {
+        handleSearchBarCancelButton(shouldHide: false)
+        searchBar.resignFirstResponder()
         
+        if searchBar.text?.count == 0
+        {
+            showEmptyTableViewMessage()
+        }
+    }
+    
+    func handleSearchBarCancelButton(shouldHide:Bool)
+    {
+        artistSearchBar.setShowsCancelButton(shouldHide, animated: true)
+        artistSearchBar.showsCancelButton = shouldHide
     }
     
     @objc func performSearchWithDelay()
@@ -245,6 +265,7 @@ extension SearchArtistViewController
             self.artistSearchBar.becomeFirstResponder()
             self.hideEmptyTableViewMessage(tableView: self.tableView)
         }
+
     }
     
     func hideEmptyTableViewMessage(tableView:UITableView)
